@@ -1,3 +1,12 @@
-const http = require('http');
+const express = require('express');
 
-http.createServer();
+const app = express();
+const port = process.env.PORT || 4041;
+
+app.get('/', (_, res) => {
+  res.send('Your Express App');
+});
+
+app.listen(port, () => {
+  console.log(`server is running on port: ${port}`);
+});
